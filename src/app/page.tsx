@@ -1,65 +1,75 @@
-import Image from "next/image";
+import TaxCalculator from "@/components/TaxCalculator";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="flex flex-col min-h-screen">
+      {/* Header */}
+      <header className="border-b border-border bg-card">
+        <div className="max-w-3xl mx-auto px-4 py-4">
+          <h1 className="text-xl sm:text-2xl font-bold text-foreground">
+            源泉徴収税計算ツール
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-sm text-muted mt-1">
+            フリーランス・個人事業主向け 報酬の税額シミュレーション
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </header>
+
+      {/* Main Content */}
+      <main className="flex-1">
+        <div className="max-w-3xl mx-auto px-4 py-6">
+          {/* Calculator */}
+          <TaxCalculator />
+
+          {/* AdSense Placeholder */}
+          <div className="mt-8 border border-dashed border-border rounded-xl p-8 text-center text-muted text-sm bg-card">
+            <p>広告スペース</p>
+          </div>
+
+          {/* SEO Content */}
+          <section className="mt-10 space-y-6 text-sm leading-relaxed text-muted">
+            <h2 className="text-lg font-bold text-foreground">
+              源泉徴収とは
+            </h2>
+            <p>
+              源泉徴収とは、報酬や給与を支払う側が、所得税をあらかじめ差し引いて国に納付する制度です。フリーランスや個人事業主がクライアントから報酬を受け取る際、多くの場合、報酬額から源泉徴収税が差し引かれた金額が振り込まれます。これは所得税の前払いにあたり、確定申告時に精算されます。
+            </p>
+
+            <h2 className="text-lg font-bold text-foreground">
+              源泉徴収税の計算方法
+            </h2>
+            <p>
+              源泉徴収税の税率は、報酬額（税抜）に応じて以下のように定められています。100万円以下の部分には10.21%（所得税10%＋復興特別所得税0.21%）、100万円を超える部分には20.42%（所得税20%＋復興特別所得税0.42%）が適用されます。なお、消費税額が請求書等で明確に区分されている場合は、税抜金額に対して源泉徴収税を計算します。
+            </p>
+
+            <h2 className="text-lg font-bold text-foreground">
+              フリーランスの確定申告との関係
+            </h2>
+            <p>
+              源泉徴収された税額は、確定申告の際に納付すべき所得税額から差し引かれます。年間の所得が少なく、源泉徴収された税額が本来の所得税額を上回る場合は、確定申告により還付を受けることができます。フリーランスとして活動する方は、年間の源泉徴収額を正確に把握しておくことが、適切な確定申告と節税のために重要です。本ツールでは複数の報酬を一括で計算し、年間合計額を把握することができます。
+            </p>
+
+            <h2 className="text-lg font-bold text-foreground">
+              このツールの使い方
+            </h2>
+            <p>
+              報酬額を入力し、消費税の扱い（税込・税抜）を選択するだけで、源泉徴収税額と手取り額（差引支払額）が自動計算されます。「項目を追加」ボタンで複数件の報酬をまとめて計算でき、年間合計も確認できます。計算結果は「請求書用テキストをコピー」ボタンで簡単にコピーできるため、請求書作成やクライアントへの連絡にそのまま活用いただけます。
+            </p>
+          </section>
         </div>
       </main>
+
+      {/* Footer */}
+      <footer className="border-t border-border bg-card mt-10">
+        <div className="max-w-3xl mx-auto px-4 py-6 text-center text-xs text-muted">
+          <p>
+            本ツールの計算結果は参考値です。正確な税額については税理士または所轄の税務署にご確認ください。
+          </p>
+          <p className="mt-2">
+            © {new Date().getFullYear()} 源泉徴収税計算ツール
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }
