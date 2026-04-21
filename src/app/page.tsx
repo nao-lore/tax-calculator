@@ -60,14 +60,22 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border bg-card mt-10">
-        <div className="max-w-3xl mx-auto px-4 py-6 text-center text-xs text-muted">
-          <p>
-            本ツールの計算結果は参考値です。正確な税額については税理士または所轄の税務署にご確認ください。
-          </p>
-          <p className="mt-2">
-            © {new Date().getFullYear()} 源泉徴収税計算ツール
-          </p>
+      <footer className="border-t border-gray-200 py-8 text-center">
+        <div className="max-w-3xl mx-auto px-4">
+          <p className="text-sm text-gray-500 mb-4">源泉徴収税計算ツール — Free online tool. No signup required.</p>
+          <div className="mb-4">
+            <p className="text-xs text-gray-400 mb-2">Related Tools</p>
+            <div className="flex flex-wrap justify-center gap-2">
+              <a href="https://eigyoubi.vercel.app" target="_blank" rel="noopener noreferrer" className="text-xs text-blue-600 hover:text-blue-800 px-2 py-1 bg-blue-50 rounded">営業日計算</a>
+              <a href="https://wareki-converter-mu.vercel.app" target="_blank" rel="noopener noreferrer" className="text-xs text-blue-600 hover:text-blue-800 px-2 py-1 bg-blue-50 rounded">和暦変換</a>
+              <a href="https://zenkaku-hankaku.vercel.app" target="_blank" rel="noopener noreferrer" className="text-xs text-blue-600 hover:text-blue-800 px-2 py-1 bg-blue-50 rounded">全角半角変換</a>
+              <a href="https://furigana-beta.vercel.app" target="_blank" rel="noopener noreferrer" className="text-xs text-blue-600 hover:text-blue-800 px-2 py-1 bg-blue-50 rounded">ふりがな変換</a>
+              <a href="https://aspect-ratio-pi.vercel.app" target="_blank" rel="noopener noreferrer" className="text-xs text-blue-600 hover:text-blue-800 px-2 py-1 bg-blue-50 rounded">Aspect Ratio</a>
+            </div>
+          </div>
+          <div className="flex justify-center gap-3 text-xs text-gray-400">
+            <a href="https://cc-tools.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600">53+ Free Tools →</a>
+          </div>
         </div>
       </footer>
     </div>
